@@ -1,0 +1,50 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}Home{% endblock title %}Home
+
+
+{% block mainbody %}
+
+
+
+
+<h4 style="color:green;">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+  </h4>
+
+ 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        
+        
+        <div class="col-md-4 col-xl-3">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Companies Registered</h6>
+                    <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
+                    <p class="m-b-0">Placed candidates this year<span class="f-right">351</span></p>
+                </div>
+            </div>
+        </div>
+        
+      
+        
+        
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock mainbody %}

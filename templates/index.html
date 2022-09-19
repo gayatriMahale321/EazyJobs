@@ -1,0 +1,77 @@
+
+{% extends "basefile.html" %}
+<style>
+   .tp
+  {
+    color:black;
+    background-color: rgba(255,255,255,0.4);
+    height: 100vh;
+
+  }
+  
+</style>
+
+
+{% block slider %}
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="200">
+        <img src="/static/images/about-fullscreen-1-1920x700.jpg" height=500px class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="200">
+        <img src="/static/images/about-image-1-940x460.jpg" height=500px class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="/static/images/banner-image-1-1920x500.jpg" height=500px class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleInterval" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleInterval" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+
+{% endblock slider %}
+
+{% block login %}
+
+<a class="nav-link"  href="/studentlogin" style="margin-left:700px;">Login</a> 
+{% endblock login %}
+
+{% block mainbody %}
+
+
+<div class="container" style="text-align:center;color:rgb(202, 197, 197);background-color:rgb(22, 21, 21);margin-top:-400px;margin-bottom: 400px;">
+  <div class="row">
+    <div class="col-12"  style="color:rgb(51, 45, 45); font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size:100;">ARE YOU LOOKING FOR A JOB?</div> 
+  
+  </div>
+  
+  <div class="row">
+    <div class="col-12 tp">YOUR SEARCH ENDS HERE</div> 
+  </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-3 offset-1 datablock shadow p-3 mb-5 bg-dark rounded">
+          <div class="zoom"><a href="studentreg/"><img src="/static/images/product-4-720x480.jpg" height=200 width="200"><span style="font-size: larger;">Register as a Student</span></a></div>
+        </div>
+        <div class="col-3 offset-1 datablock shadow p-3 mb-5 bg-white rounded">
+          <!-- <div class="zoom"><a href="jobopening/"><img src="/static/images/job-image-1-1200x600.jpg" height=200 width="200"> <span style="font-size: larger;">Register as a Company </span></a></div> -->
+          <div class="zoom"><a href="companylogin/"><img src="/static/images/job-image-1-1200x600.jpg" height=200 width="200"> <span style="font-size: larger;">Login as a Company </span></a></div>
+        
+        </div>
+        
+        <div class="col-3  offset-1 datablock shadow-lg p-3 mb-5 bg-dark rounded">
+          <div class="zoom"><a href="companyreg/"><img src="/static/images/job-image-1-1200x600.jpg" height=200 width="200"> <span style="font-size: larger;">Register as a Company </span></a></div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock mainbody %}

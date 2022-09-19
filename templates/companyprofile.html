@@ -1,0 +1,43 @@
+{% extends 'companydashboard.html' %}
+
+{% block title %}Home{% endblock title %}Home
+
+
+{% block mainbody %}
+
+
+
+
+<h4 style="color:green;">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                
+        {% endfor %}
+
+    </ul>
+    {% endif %}
+  </h4>
+
+ 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        
+      <div class="col-12">
+             <img src="/static/images/hiring.jpg" style="width:100%;height:100vh;">
+        </div>
+        
+      
+        
+        
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock mainbody %}

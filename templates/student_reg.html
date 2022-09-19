@@ -1,0 +1,31 @@
+{% extends "basefile.html" %}
+
+<style>
+ body
+{
+  background-image: url("/static/images/job-image-1-1200x600.jpg");
+  background-size: cover;
+}
+</style>
+<body>
+{% block mainbody %}
+<h4 style="color:green;">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </h4>
+<form action="" method=POST>
+{% csrf_token %}
+<table>
+<tr><th colspan=2 class="heading">Student Registration</th></tr>
+
+{{form}}
+<tr><td></td><td><input type=submit value="Register" class="btn-success"></td></tr>
+</table>
+</form>
+{% endblock mainbody %}
+</body>

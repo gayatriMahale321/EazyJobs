@@ -1,0 +1,39 @@
+{% extends 'basefile.html' %} 
+{% block title %}CompanyLogin {% endblock title%}
+ {% block mainbody %}
+
+<div class="row align-items-center">
+  <div class="col-sm-2">
+   
+</div>
+  <div class="col-sm-8">
+    <h2>Company Login</h2>
+    <form  action="" method=post novalidate>
+      {% csrf_token %}
+
+      <!-- {{form.as_p}} -->
+        <table class="tabletable-borderless"> 
+        {% for x in form  %}
+            <tr><td class='px-2 py-2'>{{x.label_tag}}</td><td>{{x}}</td><td>{{x.errors|striptags}}</td></tr>
+        {% endfor %}
+        <tr><td colspan=2> <input type="submit" class="btn btn-primary" value="Login" /></td></tr>
+    </table>
+
+
+     
+        {% comment %} <a href="{% url 'user_register' %}" class='btn btn-warning'}>New User? Register Here</a> {% endcomment %}
+    <h4 style="color:green;">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </h4>
+    {% endblock mainbody %}
+  </div>
+  <div class="col-sm-2">
+   
+    </div>
+</div>

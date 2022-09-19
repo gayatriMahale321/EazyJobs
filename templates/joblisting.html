@@ -1,0 +1,51 @@
+{% extends "dashboard.html" %}
+<style>
+ body
+{
+  background-image: url("/static/images/job-image-1-1200x600.jpg");
+  background-size: cover;
+}
+</style>
+
+{% block mainbody %}
+
+<form action="{% url 'showjobfilter' %}"  method=post>
+{% csrf_token %}
+  Enter Profile Name:<input type=text name=prname class=form-group>
+  <input type=submit value=search>
+<table class="table table-striped" style="width:80%;margin-left:10%; ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Company Regno</th>
+        <th scope="col">Opening For</th>
+        <th scope="col">For Fresher?</th>
+        <th scope="col">Experience Required</th>
+        <th scope="col">Job Location</th>
+        <th scope="col">ctc</th>
+        <th scope="col">Further Details</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for v in alldata  %}
+              
+      <tr>
+              
+        <!-- <th scope="row">{{forloop.counter}}</th> -->
+        <th scope="row">{{v.id}}</th>
+        <td>{{v.cregno}}</td>
+        <td>{{v.openingfor}}</td>
+        <td>{{v.forfresher}}</td>
+        <td>{{v.expinyear}}</td>
+        <td>{{v.joblocation}}</td>
+        <td>{{v.ctc}}</td>
+        <td>{{v.details}}      </td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock mainbody %}
